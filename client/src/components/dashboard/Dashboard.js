@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 
 class Dashboard extends Component {
-  onLogoutClick = e => {
+  createNewList = e => {
     e.preventDefault();
     this.props.logoutUser();
   };
@@ -17,22 +17,29 @@ class Dashboard extends Component {
           <div className="col s12 center-align">
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-                You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
-              </p>
             </h4>
             <button
               style={{
-                width: "150px",
+                width: "250px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem"
+                margin: "1rem"
               }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              onClick={this.createNewList}
+              className="btn btn-large waves-effect waves-light hoverable green"
             >
-              Logout
+              Create a new List
+            </button>
+            <button
+              style={{
+                width: "250px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                margin: "1rem"
+              }}
+              className="btn btn-large waves-effect waves-light hoverable green"
+            >
+              View Your Lists
             </button>
           </div>
         </div>
